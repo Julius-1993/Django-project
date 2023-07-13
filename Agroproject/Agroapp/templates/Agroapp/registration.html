@@ -1,0 +1,31 @@
+{% extends 'Agroapp/base.html'%}
+{% block content %}
+<div class="container-sm text-bg-light p-3 border-success" style="width: 600px; 
+border-radius: 12px; min-height: 50px; margin-top: 30px;">
+  <center><h1 style="color: green;">Registration Form</h1></center>
+  <hr>
+  <form method="POST" action="{%url 'registration'%}">
+    {% csrf_token %}
+    
+    <div class="input-group mb-3">
+      <span class="input-group-text">Name</span>
+      {{form.name}}
+      <span class="input-group-text" style="color: grey;">@Example Adeola Mani Ediward</span>
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text">Category</span>
+      {{form.cat}}
+      <span class="input-group-text" style="color: grey;">Choice</span>
+    </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Date of Establishment</span>
+        {{form.doe}}
+        <span class="input-group-text" style="color: grey;">@Example 02/11/2023</span>
+      </div>
+      <center>
+      <button type="submit" value="Save" class="btn btn-success">Submit</button>
+      <button type="reset"  class="btn btn-danger">Clear</button>
+      </center>
+  </form>
+</div>
+  {% endblock %}
